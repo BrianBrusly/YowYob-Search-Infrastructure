@@ -60,7 +60,7 @@ YowYob-Search-Infrastructure/
     └── health-check.sh
 ```
 
-## 🐳 Docker Compose (dev)
+##  Docker Compose (dev)
 
 **Lancement complet d'un environnement de développement** :
 
@@ -102,7 +102,7 @@ Grafana:      http://localhost:3001
 Prometheus:   http://localhost:9090
 ```
 
-## ☸ Kubernetes (prod)
+##  Kubernetes (prod)
 
 **Namespace principal** : `k8s/namespaces/yowyob.yaml`
 
@@ -125,7 +125,7 @@ yowyob.com          → Frontend (3000)
 api.yowyob.com      → API Gateway (8080)
 ```
 
-## 📡 Monitoring
+##  Monitoring
 
 **Stack complète** :
 - **Prometheus** : Collecte métriques
@@ -146,7 +146,7 @@ kubectl apply -f k8s/monitoring/
 - CPU/Mémoire/Disk
 - Métriques business (recherches/min)
 
-## 🔐 Gestion des secrets
+##  Gestion des secrets
 
 **Sécurisée via** :
 - **Kubernetes Secrets**
@@ -173,7 +173,7 @@ GRAFANA_PASSWORD
 
 **Flux** : Push → Tests → Build → Push Registry → Deploy K8s
 
-## 🧱 Environnements
+##  Environnements
 
 | Environnement | Technologie       | Usage              |
 |---------------|-------------------|--------------------|
@@ -192,7 +192,7 @@ terraform plan -var-file=environments/prod.tfvars
 terraform apply -var-file=environments/prod.tfvars
 ```
 
-## 🔧 Scripts utilitaires
+##  Scripts utilitaires
 
 ```bash
 ./scripts/setup-local-env.sh     # Environnement local complet
@@ -201,7 +201,7 @@ terraform apply -var-file=environments/prod.tfvars
 ./scripts/health-check.sh        # Vérification santé
 ```
 
-## 📜 Conventions
+##  Conventions
 
 - **Versioning** : sémantique (semver)
 - **Images Docker** : `gcr.io/yowyob/{service}:{tag}`
@@ -209,7 +209,7 @@ terraform apply -var-file=environments/prod.tfvars
 - **Ressources** : requests/limits définis
 - **Healthchecks** : liveness + readiness
 
-## 🔒 Sécurité
+##  Sécurité
 
 - **HTTPS/TLS** : Let's Encrypt via cert-manager
 - **RBAC K8s** : Namespace isolation
@@ -219,11 +219,11 @@ terraform apply -var-file=environments/prod.tfvars
 
 ***
 
-## 🚀 Quick Start
+##  Quick Start
 
 ```bash
 # 1. Développement local (5min)
-git clone https://github.com/your-org/YowYob-Search-Infrastructure
+git clone https://github.com/BrianBrusly/YowYob-Search-Infrastructure
 cd YowYob-Search-Infrastructure
 ./scripts/setup-local-env.sh
 
@@ -252,3 +252,4 @@ cd YowYob-Search-Infrastructure
 [8](https://www.reddit.com/r/opensource/comments/txl9zq/next_level_readme/)
 [9](https://data.code.gouv.fr/hosts/gitlab-research.centralesupelec.fr/repositories/myapps-templates%2Fnode/readme)
 [10](https://cm.linkedin.com/in/frank-fomekong-441874200)
+
