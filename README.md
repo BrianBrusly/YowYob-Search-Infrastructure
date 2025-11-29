@@ -34,7 +34,7 @@ Ce repository contient toute l'infrastructure nécessaire pour exécuter la plat
 │  │  │PostgreSQL│ │Elasticsearch││  Redis   │ │   Kafka    │   │ │
 │  │  │ +PostGIS │ │  Cluster   │ │  Cache   │ │   Bus      │   │ │
 │  │  └──────────┘ └────────────┘ └──────────┘ └────────────┘   │ │
-│  └─────────────────────────────────────────────────────────────┘│
+│  └────────────────────────────────────────────────────────────┘ │
 │                                                                 │
 │  ┌──────────────────────────────────────────────────────────────┤
 │  │                 OBSERVABILITY STACK                        │ │
@@ -42,7 +42,7 @@ Ce repository contient toute l'infrastructure nécessaire pour exécuter la plat
 │  │  │Prometheus│ │ Grafana  │ │   Loki   │ │   Tempo    │     │ │
 │  │  │ Metrics  │ │Dashboard │ │  Logs    │ │  Tracing   │     │ │
 │  │  └──────────┘ └──────────┘ └──────────┘ └────────────┘     │ │
-│  └─────────────────────────────────────────────────────────────┘│
+│  └────────────────────────────────────────────────────────────┘ │
 │                                                                 │
 └─────────────────────────────────────────────────────────────────┘
 ```
@@ -265,18 +265,18 @@ YowYob-Search-Infrastructure/
                     │      Spring Cloud Gateway (8080)          │
                     └───────────────┬───────────────────────────┘
                                     │
-       ┌────────────────────────────┼────────────────────────────────────────┐
-       │                            │                                        │
-┌──────▼──────┐           ┌─────────▼────────┐                    ┌─────────▼────────┐
-│ SEARCH SVC  │           │ USER SVC          │                   │ GEO SVC          │
-│Elasticsearch│           │ PostgreSQL (Users)│                   │ PostGIS / OSM    │
-└──────┬──────┘           └─────────┬────────┘                    └─────────┬────────┘
-       │                            │                                        │
-       ▼                            ▼                                        ▼
-┌──────────────┐            ┌──────────────┐                         ┌──────────────┐
-│ CRAWLER SVC  │──► Kafka ► │ STATS SVC    │ ◄──────────────────────►│ NOTIF SVC    │
-│ JSoup / Tika │            │ Analytics    │                         │ Web Push     │
-└──────────────┘            └──────────────┘                         └──────────────┘
+           ┌────────────────────────────┼────────────────────────────────────────┐
+           │                            │                                        │
+    ┌──────▼──────┐           ┌─────────▼────────┐                    ┌─────────▼────────┐
+    │ SEARCH SVC  │           │ USER SVC          │                   │ GEO SVC          │
+    │Elasticsearch│           │ PostgreSQL (Users)│                   │ PostGIS / OSM    │
+    └──────┬──────┘           └─────────┬────────┘                    └─────────┬────────┘
+           │                            │                                        │
+           ▼                            ▼                                        ▼
+    ┌──────────────┐            ┌──────────────┐                         ┌──────────────┐
+    │ CRAWLER SVC  │──► Kafka ► │ STATS SVC    │ ◄──────────────────────►│ NOTIF SVC    │
+    │ JSoup / Tika │            │ Analytics    │                         │ Web Push     │
+    └──────────────┘            └──────────────┘                         └──────────────┘
 
                   ┌────────────────────────────────────────────┐
                   │            INFRASTRUCTURE DATA             │
@@ -873,3 +873,4 @@ MIT License - Voir le fichier [LICENSE](LICENSE) pour plus de détails.
 ---
 
 **Infrastructure YowYob** - *Scalable, Resilient, Cloud-Native*
+
