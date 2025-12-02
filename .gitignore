@@ -1,0 +1,95 @@
+# ============================================
+# YOWYOB SEARCH INFRASTRUCTURE - GIT IGNORE
+# ============================================
+
+# Copier le contenu principal ci-dessus et ajouter:
+
+# =======================
+# TERRAFORM
+# =======================
+
+# Fichiers Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfvars
+terraform.tfstate.backup
+.terraform.lock.hcl
+
+# Variables sensibles
+variables.tfvars
+*.auto.tfvars
+
+# Plans Terraform
+*.tfplan
+plan.out
+
+# =======================
+# KUBERNETES
+# =======================
+
+# Fichiers kubeconfig
+kubeconfig
+*.kubeconfig
+~/.kube/config
+
+# Secrets Kubernetes générés
+**/secrets/
+**/*-secret.yaml
+**/*-sealed.yaml
+
+# Manifests générés
+**/generated/
+**/*-generated.yaml
+
+# =======================
+# DOCKER
+# =======================
+
+# Images Docker locales
+*.tar
+*.tar.gz
+
+# Fichiers de build
+docker-build/
+**/docker-build/
+
+# Docker Compose override
+docker-compose.override.yml
+
+# =======================
+# SCRIPTS ET SAUVEGARDES
+# =======================
+
+# Sauvegardes
+backups/
+**/backups/
+*.backup
+*.sql
+*.dump
+
+# Scripts temporaires
+*.sh.tmp
+*.bash.tmp
+
+# Logs de déploiement
+deploy.log
+**/deployments/*.log
+
+# =======================
+# MONITORING
+# =======================
+
+# Données de monitoring
+prometheus-data/
+grafana-data/
+loki-data/
+tempo-data/
+
+# Fichiers de logs
+**/logs/
+**/*.log
+
+# Métriques temporaires
+*.prom
+*.metrics
